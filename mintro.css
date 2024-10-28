@@ -1,0 +1,247 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Containers */
+.container {
+  padding: 20px;
+  border: 2px solid #000;
+  background-color: #fff;
+  max-width: 800px;
+  margin: 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-transform: uppercase;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+h1 { font-size: 32px; }
+h2 { font-size: 28px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }
+
+/* Paragraphs */
+p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Links */
+a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px dashed #333;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+a:hover {
+  color: #000;
+  border-color: #000;
+}
+
+/* Lists */
+ul, ol {
+  margin: 15px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: 1px solid #333;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #000;
+  transform: scale(1.05);
+}
+
+/* Inputs */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+}
+
+/* Code blocks */
+pre, code {
+  background-color: #f0f0f0;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  overflow-x: auto;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  input[type="text"], input[type="email"], input[type="password"], textarea {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+/* Additional styling for sections */
+section {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+header {
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 2px solid #333;
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+/* Retro-styled elements */
+.blockquote {
+  border-left: 3px solid #333;
+  padding-left: 10px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table, th, td {
+  border: 1px solid #333;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Install Section */
+.install-section {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.install-section pre {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  font-size: 12px;
+  overflow-x: auto;
+}
+
+/* Links Section */
+.links-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.links-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.links-section li {
+  display: inline;
+  margin-right: 15px;
+}
+
+.links-section a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+
+.links-section a:hover {
+  color: #000;
+}
+
+/* Retro-style decorations */
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  margin: 20px 0;
+}
+

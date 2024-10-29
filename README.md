@@ -16,7 +16,7 @@ MintroCSS is a minimal, retro-inspired CSS library designed to provide a clean, 
 Add MintroCSS to your HTML file:
 
 ```html
-<link rel="stylesheet" href="https://github.com/xprilion/mintrocss/mintro.css">
+<link rel="stylesheet" href="https://xprilion.com/mintrocss/mintro.css">
 ```
 
 Or clone the repository and use the CSS directly:
@@ -44,7 +44,7 @@ MintroCSS applies styles directly to standard HTML elements (e.g., `<h1>`, `<p>`
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MintroCSS Demo</title>
-    <link rel="stylesheet" href="https://github.com/xprilion/mintrocss/mintro.css">
+    <link rel="stylesheet" href="https://xprilion.com/mintrocss/mintro.css">
 </head>
 <body>
     <div class="container">

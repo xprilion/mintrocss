@@ -13,9 +13,15 @@ body {
   line-height: 1.6;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
+}
+
+header, main, footer {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
 }
 
 /* Containers */
@@ -46,7 +52,7 @@ h5 { font-size: 16px; }
 h6 { font-size: 14px; }
 
 /* Paragraphs */
-p {
+p, label {
   font-size: 14px;
   margin-bottom: 15px;
   text-align: justify;
@@ -93,7 +99,7 @@ button:hover {
 }
 
 /* Inputs */
-input[type="text"], input[type="email"], input[type="password"], textarea {
+input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="file"], input[type="date"], input[type="time"], input[type="color"], textarea, select {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
@@ -103,12 +109,28 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   background-color: #f0f0f0;
 }
 
-/* Forms */
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Form */
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   max-width: 600px;
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 5px;
 }
 
 /* Code blocks */
@@ -121,12 +143,125 @@ pre, code {
   overflow-x: auto;
 }
 
-/* Footer */
+/* Blockquote */
+blockquote {
+  border-left: 3px solid #333;
+  padding-left: 10px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #555;
+}
+
 footer {
   margin-top: 40px;
   font-size: 12px;
   text-align: center;
   color: #666;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table, th, td {
+  border: 1px solid #333;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Figures */
+figure {
+  margin: 20px 0;
+}
+
+figcaption {
+  font-size: 12px;
+  text-align: center;
+  color: #555;
+  margin-top: 5px;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+/* Inline elements */
+strong { font-weight: bold; }
+em { font-style: italic; }
+u { text-decoration: underline; }
+abbr, kbd, mark {
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Progress bar */
+progress {
+  width: 100%;
+  height: 15px;
+}
+
+/* Details (accordion) */
+details {
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px;
+}
+
+/* Modals */
+dialog {
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 4px;
+  max-width: 500px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Section styling */
+section {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+/* Header styling */
+header {
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 2px solid #333;
+  text-align: center;
+}
+
+/* Main content styling */
+main {
+  width: 100%;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+/* Horizontal rule */
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  margin: 20px 0;
 }
 
 /* Mobile adjustments */
@@ -145,70 +280,10 @@ footer {
     font-size: 12px;
   }
 
-  input[type="text"], input[type="email"], input[type="password"], textarea {
+  input[type="text"], input[type="email"], input[type="password"], textarea, select {
     font-size: 12px;
     padding: 8px;
   }
-}
-
-/* Additional styling for sections */
-section {
-  margin: 20px 0;
-  padding: 15px;
-  border: 1px solid #ddd;
-  background-color: #fafafa;
-}
-
-header {
-  margin-bottom: 20px;
-  padding: 10px 0;
-  border-bottom: 2px solid #333;
-  text-align: center;
-}
-
-main {
-  width: 100%;
-  padding: 20px;
-  flex-grow: 1;
-}
-
-/* Retro-styled elements */
-.blockquote {
-  border-left: 3px solid #333;
-  padding-left: 10px;
-  margin: 20px 0;
-  font-style: italic;
-  color: #555;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-}
-
-table, th, td {
-  border: 1px solid #333;
-}
-
-th, td {
-  padding: 10px;
-  text-align: left;
-}
-
-/* Install Section */
-.install-section {
-  margin-top: 20px;
-  text-align: left;
-}
-
-.install-section pre {
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #333;
-  font-size: 12px;
-  overflow-x: auto;
 }
 
 /* Links Section */
@@ -237,11 +312,17 @@ th, td {
   color: #000;
 }
 
-/* Retro-style decorations */
-hr {
-  border: 0;
-  height: 1px;
-  background: #333;
-  margin: 20px 0;
+/* Additional Styling for Install Section */
+.install-section {
+  margin-top: 20px;
+  text-align: left;
 }
 
+.install-section pre {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  font-size: 12px;
+  overflow-x: auto;
+}

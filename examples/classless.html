@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>MintroCSS Example • Minimal Retro CSS</title>
+    <meta name="description" content="A class-less MintroCSS example, without dependencies." />
+
+    <link rel="stylesheet" href="https://xprilion.com/mintrocss/mintro.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <hgroup>
+            <h1>MintroCSS</h1>
+            <p>A minimal, retro-styled CSS library.</p>
+        </hgroup>
+        <nav>
+            <ul>
+                <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+                <li><a href="#" data-theme-switcher="light">Light</a></li>
+                <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ./ Header -->
+
+    <!-- Main -->
+    <main>
+        <!-- Preview -->
+        <section id="preview">
+            <h2>Preview</h2>
+            <p>
+                Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien.
+            </p>
+            <form>
+                <input type="text" name="firstname" placeholder="First name" required />
+                <input type="email" name="email" placeholder="Email address" autocomplete="email" required />
+                <button type="submit">Subscribe</button>
+                <fieldset>
+                    <label for="terms">
+                        <input type="checkbox" role="switch" id="terms" name="terms" />
+                        I agree to the <a href="#" onclick="event.preventDefault()">Privacy Policy</a>
+                    </label>
+                </fieldset>
+            </form>
+        </section>
+        <!-- ./ Preview -->
+
+        <!-- Typography -->
+        <section id="typography">
+            <h2>Typography</h2>
+            <p>Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugiat.</p>
+
+            <!-- Blockquote -->
+            <blockquote>
+                "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non."
+                <footer><cite>- Phasellus eget lacinia</cite></footer>
+            </blockquote>
+
+            <!-- Lists -->
+            <h3>Lists</h3>
+            <ul>
+                <li>Aliquam lobortis lacus eu libero ornare facilisis.</li>
+                <li>Nam et magna at libero scelerisque egestas.</li>
+            </ul>
+
+            <!-- Inline elements -->
+            <h3>Inline text elements</h3>
+            <p><a href="#">Link</a> <strong>Bold</strong> <em>Italic</em> <u>Underline</u></p>
+        </section>
+
+        <!-- Medias -->
+        <section id="medias">
+            <figure>
+                <img src="img/sample.jpg" alt="Sample image" />
+                <figcaption>Image from <a href="https://unsplash.com">unsplash.com</a></figcaption>
+            </figure>
+        </section>
+        <!-- ./ Typography -->
+
+        <!-- Form elements -->
+        <section id="form">
+            <form>
+                <h2>Form elements</h2>
+                <label for="text">Text</label>
+                <input type="text" id="text" name="text" placeholder="Text" />
+
+                <label for="select">Select</label>
+                <select id="select" name="select" required>
+                    <option value="" selected>Select…</option>
+                    <option>Option 1</option>
+                </select>
+                <input type="submit" value="Submit" />
+            </form>
+        </section>
+        <!-- ./ Form elements -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <small>Built with MintroCSS • <a href="#">Source code</a></small>
+    </footer>
+    <!-- ./ Footer -->
+</body>
+</html>

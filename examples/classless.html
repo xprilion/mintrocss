@@ -7,7 +7,7 @@
     <title>MintroCSS Example • Minimal Retro CSS</title>
     <meta name="description" content="A class-less MintroCSS example, without dependencies." />
 
-    <link rel="stylesheet" href="https://xprilion.com/mintrocss/mintro.css">
+    <link rel="stylesheet" href="/mintro.css">
 </head>
 
 <body>
@@ -17,11 +17,22 @@
             <h1>MintroCSS</h1>
             <p>A minimal, retro-styled CSS library.</p>
         </hgroup>
-        <nav>
+        <details class="dropdown">
+            <summary aria-label="Theme switcher">
+                🎨 Theme
+            </summary>
             <ul>
-                <li><a href="#" data-theme-switcher="auto">Auto</a></li>
                 <li><a href="#" data-theme-switcher="light">Light</a></li>
                 <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+                <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+            </ul>
+        </details>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#docs">Documentation</a></li>
+                <li><a href="#examples">Examples</a></li>
             </ul>
         </nav>
     </header>
@@ -29,80 +40,166 @@
 
     <!-- Main -->
     <main>
-        <!-- Preview -->
-        <section id="preview">
-            <h2>Preview</h2>
-            <p>
-                Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien.
-            </p>
-            <form>
-                <input type="text" name="firstname" placeholder="First name" required />
-                <input type="email" name="email" placeholder="Email address" autocomplete="email" required />
-                <button type="submit">Subscribe</button>
-                <fieldset>
-                    <label for="terms">
-                        <input type="checkbox" role="switch" id="terms" name="terms" />
-                        I agree to the <a href="#" onclick="event.preventDefault()">Privacy Policy</a>
-                    </label>
-                </fieldset>
-            </form>
-        </section>
-        <!-- ./ Preview -->
+        <article>
+            <header>
+                <h2>Welcome to MintroCSS</h2>
+                <p>Published on <time datetime="2024-03-20">March 20, 2024</time></p>
+            </header>
+            
+            <section id="introduction">
+                <h3>Introduction</h3>
+                <p>This is a comprehensive showcase of elements styled with MintroCSS. Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</p>
+                
+                <aside>
+                    <p>💡 <strong>Pro tip:</strong> MintroCSS works without any classes, using semantic HTML elements.</p>
+                </aside>
+            </section>
 
-        <!-- Typography -->
-        <section id="typography">
-            <h2>Typography</h2>
-            <p>Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugiat.</p>
+            <section id="text-elements">
+                <h3>Text Elements</h3>
+                <p>Regular paragraph with <mark>highlighted text</mark>, <em>emphasized text</em>, and <strong>strong text</strong>.</p>
+                
+                <blockquote>
+                    <p>This is a blockquote with a citation.</p>
+                    <footer>— <cite>Anonymous Source</cite></footer>
+                </blockquote>
 
-            <!-- Blockquote -->
-            <blockquote>
-                "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non."
-                <footer><cite>- Phasellus eget lacinia</cite></footer>
-            </blockquote>
+                <address>
+                    Contact us at:<br>
+                    Email: <a href="mailto:example@mintrocss.com">example@mintrocss.com</a><br>
+                    Web: <a href="https://mintrocss.com">mintrocss.com</a>
+                </address>
+            </section>
 
-            <!-- Lists -->
-            <h3>Lists</h3>
-            <ul>
-                <li>Aliquam lobortis lacus eu libero ornare facilisis.</li>
-                <li>Nam et magna at libero scelerisque egestas.</li>
-            </ul>
+            <section id="lists">
+                <h3>List Types</h3>
+                
+                <h4>Ordered List</h4>
+                <ol>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ol>
 
-            <!-- Inline elements -->
-            <h3>Inline text elements</h3>
-            <p><a href="#">Link</a> <strong>Bold</strong> <em>Italic</em> <u>Underline</u></p>
-        </section>
+                <h4>Unordered List</h4>
+                <ul>
+                    <li>Sample item one</li>
+                    <li>Sample item two</li>
+                    <li>Sample item three</li>
+                </ul>
 
-        <!-- Medias -->
-        <section id="medias">
-            <figure>
-                <img src="img/sample.jpg" alt="Sample image" />
-                <figcaption>Image from <a href="https://unsplash.com">unsplash.com</a></figcaption>
-            </figure>
-        </section>
-        <!-- ./ Typography -->
+                <h4>Definition List</h4>
+                <dl>
+                    <dt>HTML</dt>
+                    <dd>HyperText Markup Language</dd>
+                    
+                    <dt>CSS</dt>
+                    <dd>Cascading Style Sheets</dd>
+                    
+                    <dt>JS</dt>
+                    <dd>JavaScript</dd>
+                </dl>
+            </section>
 
-        <!-- Form elements -->
-        <section id="form">
-            <form>
-                <h2>Form elements</h2>
-                <label for="text">Text</label>
-                <input type="text" id="text" name="text" placeholder="Text" />
+            <section id="forms">
+                <h3>Form Elements</h3>
+                <form>
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your name">
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com">
+                        
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob">
+                        
+                        <label for="color">Favorite Color:</label>
+                        <input type="color" id="color" name="color">
+                    </fieldset>
 
-                <label for="select">Select</label>
-                <select id="select" name="select" required>
-                    <option value="" selected>Select…</option>
-                    <option>Option 1</option>
-                </select>
-                <input type="submit" value="Submit" />
-            </form>
-        </section>
-        <!-- ./ Form elements -->
+                    <fieldset>
+                        <legend>Preferences</legend>
+                        
+                        <label>
+                            <input type="checkbox" name="newsletter">
+                            Subscribe to newsletter
+                        </label>
+                        
+                        <label for="experience">Experience Level:</label>
+                        <select id="experience" name="experience">
+                            <option value="">Select level...</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                        
+                        <label>Preferred Contact Method:</label>
+                        <label>
+                            <input type="radio" name="contact" value="email">
+                            Email
+                        </label>
+                        <label>
+                            <input type="radio" name="contact" value="phone">
+                            Phone
+                        </label>
+                    </fieldset>
+
+                    <button type="submit">Submit Form</button>
+                </form>
+            </section>
+
+            <section id="tables">
+                <h3>Table Example</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Header 1</th>
+                            <th>Header 2</th>
+                            <th>Header 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Row 1, Cell 1</td>
+                            <td>Row 1, Cell 2</td>
+                            <td>Row 1, Cell 3</td>
+                        </tr>
+                        <tr>
+                            <td>Row 2, Cell 1</td>
+                            <td>Row 2, Cell 2</td>
+                            <td>Row 2, Cell 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="interactive">
+                <h3>Interactive Elements</h3>
+                
+                <details>
+                    <summary>Click to expand</summary>
+                    <p>This is the expanded content that appears when clicked.</p>
+                </details>
+
+                <h4>Progress Indicator</h4>
+                <progress value="70" max="100">70%</progress>
+
+                <h4>Range Slider</h4>
+                <input type="range" min="0" max="100" value="50">
+            </section>
+        </article>
     </main>
 
     <!-- Footer -->
     <footer>
-        <small>Built with MintroCSS • <a href="#">Source code</a></small>
+        <p>Built with MintroCSS • <a href="#">Source code</a></p>
+        <small>© 2024 MintroCSS. All rights reserved.</small>
     </footer>
     <!-- ./ Footer -->
+
+    <script src="/examples/minimal-theme-switcher.js"></script>
 </body>
 </html>

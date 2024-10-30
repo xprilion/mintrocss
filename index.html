@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MintroCSS - Minimal Retro CSS Library</title>
+    <meta name="description" content="A minimal, retro-inspired CSS library for modern web pages">
+    <link rel="stylesheet" href="/mintro.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><strong>MintroCSS</strong></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="https://github.com/xprilion/mintrocss">GitHub</a></li>
+                <li><a href="#" onclick="toggleTheme(event)">Toggle theme</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <article id="hero">
+            <hgroup>
+                <h1>MintroCSS</h1>
+                <p>Minimal Retro CSS stylings for your web pages</p>
+            </hgroup>
+            
+            <!-- Quick Copy Installation -->
+            <div>
+                <p># Add to your HTML file:</p>
+                <code>&lt;link rel="stylesheet" href="https://xprilion.com/mintrocss/mintro.css"&gt;</code>
+            </div>
+        </article>
+
+        <!-- Features Grid -->
+        <section id="features">
+            <h2>Why MintroCSS?</h2>
+            <div class="grid">
+                <article>
+                    <h3>📦 Zero Classes</h3>
+                    <p>Write semantic HTML and get beautiful styles automatically. No extra classes needed.</p>
+                </article>
+                <article>
+                    <h3>🎨 Retro Feel</h3>
+                    <p>Monospace fonts, dashed underlines, and classic borders for that vintage computing aesthetic.</p>
+                </article>
+                <article>
+                    <h3>📱 Mobile-First</h3>
+                    <p>Responsive by default. Looks great on all devices, from phones to desktops.</p>
+                </article>
+                <article>
+                    <h3>🚀 Lightning Fast</h3>
+                    <p>Minimal footprint, maximum impact. No bloat, just clean, efficient CSS.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Interactive Demo -->
+        <section id="examples">
+            <h2>See it in action</h2>
+            
+            <!-- Form Example -->
+            <div class="demo-container">
+                <form>
+                    <fieldset>
+                        <legend>Sample Form</legend>
+                        <label for="demo-name">Name:</label>
+                        <input type="text" id="demo-name" placeholder="John Doe">
+                        
+                        <label for="demo-email">Email:</label>
+                        <input type="email" id="demo-email" placeholder="john@example.com">
+                        
+                        <button type="submit">Submit</button>
+                    </fieldset>
+                </form>
+
+                <!-- Table Example -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Typography</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Forms</td>
+                            <td>✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Quick Start -->
+        <section id="quickstart">
+            <h2>Quick Start Guide</h2>
+            <ol>
+                <li>Add the CSS to your HTML file</li>
+                <li>Write semantic HTML</li>
+                <li>Enjoy the retro styles!</li>
+            </ol>
+            <a href="examples/classless.html" class="button">View Full Demo</a>
+            <a href="https://github.com/xprilion/mintrocss" class="button">GitHub →</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built with 💻 by <a href="https://github.com/xprilion">xprilion</a></p>
+        <small>© 2024 MintroCSS • MIT License</small>
+    </footer>
+
+    <script>
+        // Theme toggler
+        const themeToggler = {
+            _scheme: "auto",
+            rootAttribute: "data-theme",
+            localStorageKey: "mintroPreferredColorScheme",
+
+            init() {
+                this.scheme = localStorage.getItem(this.localStorageKey) || 
+                             (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+                this.applyScheme();
+            },
+
+            toggle() {
+                this.scheme = this.scheme === "dark" ? "light" : "dark";
+                this.applyScheme();
+                localStorage.setItem(this.localStorageKey, this.scheme);
+            },
+
+            applyScheme() {
+                document.documentElement.setAttribute(this.rootAttribute, this.scheme);
+            }
+        };
+
+        // Initialize theme
+        themeToggler.init();
+
+        // Toggle function
+        function toggleTheme(e) {
+            e.preventDefault();
+            themeToggler.toggle();
+        }
+    </script>
+</body>
+</html>

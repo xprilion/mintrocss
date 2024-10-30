@@ -8,14 +8,15 @@
 /* Base styles */
 body {
   font-family: 'Courier New', Courier, monospace;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
   width: 100%;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 header, main, footer {
@@ -27,12 +28,12 @@ header, main, footer {
 /* Containers */
 .container {
   padding: 20px;
-  border: 2px solid #000;
-  background-color: #fff;
+  border: 2px solid var(--accent-color);
+  background-color: var(--section-bg);
   max-width: 800px;
   margin: 20px;
   border-radius: 6px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 /* Headers */
@@ -40,8 +41,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 10px;
   font-weight: normal;
   text-transform: uppercase;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 5px;
+  color: var(--text-color);
 }
 
 h1 { font-size: 32px; }
@@ -53,22 +55,22 @@ h6 { font-size: 14px; }
 
 /* Paragraphs */
 p, label {
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 15px;
   text-align: justify;
 }
 
 /* Links */
 a {
-  color: #333;
+  color: var(--text-color);
   text-decoration: none;
-  border-bottom: 1px dashed #333;
+  border-bottom: 1px dashed var(--border-color);
   transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 a:hover {
-  color: #000;
-  border-color: #000;
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 /* Lists */
@@ -79,22 +81,22 @@ ul, ol {
 
 li {
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* Buttons */
 button {
   padding: 10px 20px;
-  font-size: 14px;
-  border: 1px solid #333;
-  background-color: #333;
-  color: #fff;
+  font-size: 16px;
+  border: 1px solid var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--bg-color);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #000;
+  background-color: var(--text-color);
   transform: scale(1.05);
 }
 
@@ -103,10 +105,10 @@ input[type="text"], input[type="email"], input[type="password"], input[type="sea
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  font-size: 14px;
-  border: 1px solid #333;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
-  background-color: #f0f0f0;
+  background-color: var(--input-bg);
 }
 
 input[type="range"] {
@@ -123,7 +125,7 @@ form {
 }
 
 fieldset {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   padding: 15px;
   margin: 10px 0;
 }
@@ -135,28 +137,38 @@ legend {
 
 /* Code blocks */
 pre, code {
-  background-color: #f0f0f0;
-  border: 1px solid #333;
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
   padding: 10px;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 14px;
   overflow-x: auto;
+  color: var(--text-color);
+  white-space: pre-wrap;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+/* Inline code elements */
+code {
+  padding: 2px 4px;
+  white-space: normal;
 }
 
 /* Blockquote */
 blockquote {
-  border-left: 3px solid #333;
+  border-left: 3px solid var(--accent-color);
   padding-left: 10px;
   margin: 20px 0;
   font-style: italic;
-  color: #555;
+  color: var(--blockquote-color);
 }
 
 footer {
   margin-top: 40px;
   font-size: 12px;
   text-align: center;
-  color: #666;
+  color: var(--text-muted);
 }
 
 /* Tables */
@@ -167,7 +179,7 @@ table {
 }
 
 table, th, td {
-  border: 1px solid #333;
+  border: 1px solid var(--border-color);
 }
 
 th, td {
@@ -181,9 +193,9 @@ figure {
 }
 
 figcaption {
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
-  color: #555;
+  color: var(--figcaption-color);
   margin-top: 5px;
 }
 
@@ -197,7 +209,7 @@ strong { font-weight: bold; }
 em { font-style: italic; }
 u { text-decoration: underline; }
 abbr, kbd, mark {
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
 }
 
@@ -211,8 +223,9 @@ progress {
 details {
   margin: 15px 0;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
+  background-color: var(--section-bg);
 }
 
 summary {
@@ -223,29 +236,30 @@ summary {
 
 /* Modals */
 dialog {
-  border: 1px solid #333;
+  border: 1px solid var(--dialog-border);
   padding: 20px;
   border-radius: 4px;
   max-width: 500px;
 }
 
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--dialog-backdrop);
 }
 
 /* Section styling */
 section {
   margin: 20px 0;
   padding: 15px;
-  border: 1px solid #ddd;
-  background-color: #fafafa;
+  border: 1px solid var(--border-color);
+  background-color: var(--section-bg);
+  border-radius: 4px;
 }
 
 /* Header styling */
 header {
   margin-bottom: 20px;
   padding: 10px 0;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid var(--border-color);
   text-align: center;
 }
 
@@ -260,7 +274,7 @@ main {
 hr {
   border: 0;
   height: 1px;
-  background: #333;
+  background: var(--border-color);
   margin: 20px 0;
 }
 
@@ -277,11 +291,11 @@ hr {
 
   button {
     padding: 8px 16px;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   input[type="text"], input[type="email"], input[type="password"], textarea, select {
-    font-size: 12px;
+    font-size: 14px;
     padding: 8px;
   }
 }
@@ -303,13 +317,13 @@ hr {
 }
 
 .links-section a {
-  color: #333;
+  color: var(--text-color);
   text-decoration: none;
   border-bottom: 1px solid;
 }
 
 .links-section a:hover {
-  color: #000;
+  color: var(--link-hover);
 }
 
 /* Additional Styling for Install Section */
@@ -319,10 +333,764 @@ hr {
 }
 
 .install-section pre {
-  background-color: #f0f0f0;
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
   padding: 10px;
   border-radius: 4px;
-  border: 1px solid #333;
-  font-size: 12px;
+  font-size: 14px;
   overflow-x: auto;
+}
+
+/* Definition Lists */
+dl {
+  margin: 15px 0;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+dd {
+  margin-left: 20px;
+  color: var(--text-muted);
+}
+
+/* Article styling */
+article {
+  margin: 25px 0;
+  padding: 20px;
+  background-color: var(--section-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+/* Aside styling */
+aside {
+  padding: 15px;
+  margin: 15px 0;
+  background-color: var(--aside-bg);
+  border-left: 3px solid var(--aside-border);
+  font-size: 0.9em;
+}
+
+/* Navigation enhancements */
+nav {
+  padding: 10px 0;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+nav li {
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Mark styling */
+mark {
+  background-color: var(--mark-bg);
+  color: var(--mark-color);
+}
+
+/* Keyboard styling */
+kbd {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 0 var(--border-color);
+  color: var(--text-color);
+}
+
+/* Time and small elements */
+time, small {
+  color: var(--text-muted);
+}
+
+/* Address styling */
+address {
+  font-style: normal;
+  margin: 15px 0;
+  padding: 10px;
+  border-left: 2px solid var(--border-color);
+}
+
+/* Description list improvements */
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px 20px;
+  align-items: start;
+}
+
+dt {
+  grid-column: 1;
+  font-weight: bold;
+}
+
+dd {
+  grid-column: 2;
+  margin: 0;
+}
+
+/* Form elements base styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 20px 0;
+}
+
+/* Fieldset styling */
+fieldset {
+  border: 2px solid var(--border-color);
+  padding: 20px;
+  margin: 0;
+  border-radius: 4px;
+  background-color: var(--section-bg);
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 10px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border-radius: 2px;
+}
+
+/* Label styling */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Checkbox and radio container */
+label:has(> input[type="checkbox"]),
+label:has(> input[type="radio"]) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 4px 0 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Input focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--shadow-color);
+}
+
+/* Checkbox and radio styling */
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-color);
+  background-color: var(--input-bg);
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+}
+
+input[type="checkbox"] {
+  border-radius: 3px;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+/* Checkbox and radio checked states */
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: var(--accent-color);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: var(--checkbox-check-color);
+  font-size: 14px;
+  left: 2px;
+  top: -1px;
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--radio-dot-color);
+  border-radius: 50%;
+  left: 3px;
+  top: 3px;
+}
+
+/* Select styling */
+select {
+  appearance: none;
+  padding-right: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 8px) center;
+}
+
+/* File input styling */
+input[type="file"] {
+  border: 2px dashed var(--border-color);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--input-bg);
+}
+
+input[type="file"]::file-selector-button {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-family: inherit;
+}
+
+/* Range input styling */
+input[type="range"] {
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background-color: var(--border-color);
+  border-radius: 3px;
+  margin: 10px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: var(--accent-color);
+  border: 2px solid var(--bg-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Color input styling */
+input[type="color"] {
+  width: 60px;
+  height: 40px;
+  padding: 2px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Textarea styling */
+textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* Form validation styling */
+input:invalid,
+textarea:invalid,
+select:invalid {
+  border-color: var(--error-color);
+}
+
+/* Required field indicator */
+label.required::after {
+  content: '*';
+  color: var(--required-color);
+  margin-left: 4px;
+}
+
+/* Disabled state */
+input:disabled,
+textarea:disabled,
+select:disabled,
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Button styling (submit, reset, etc.) */
+button,
+input[type="submit"],
+input[type="reset"] {
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: var(--text-color);
+  border-color: var(--text-color);
+  transform: translateY(-1px);
+}
+
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active {
+  transform: translateY(1px);
+}
+
+/* Progress element styling */
+progress {
+  width: 100%;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--input-bg);
+  border-radius: 2px;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  fieldset {
+    padding: 15px;
+  }
+
+  input[type="file"] {
+    padding: 15px;
+  }
+
+  button,
+  input[type="submit"],
+  input[type="reset"] {
+    width: 100%;
+  }
+}
+
+/* Base text size adjustments */
+p, label, li, td, th, input, select, textarea, button {
+  font-size: 16px;
+}
+
+small, figcaption, time, .small-text {
+  font-size: 14px;
+}
+
+code, pre {
+  font-size: 14px;
+}
+
+/* Form elements text color fix */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+textarea,
+select {
+  color: var(--text-color);
+}
+
+/* Placeholder text color */
+::placeholder {
+  color: var(--blockquote-color);
+  opacity: 0.7;
+}
+
+/* Select option text color */
+option {
+  color: var(--text-color);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  p, label, li, td, th, input, select, textarea, button {
+    font-size: 14px;
+  }
+
+  small, figcaption, time, .small-text {
+    font-size: 12px;
+  }
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  display: none;
+}
+
+/* Theme-specific variables */
+:root {
+  /* Light theme (default) */
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --text-muted: #666;
+  --text-light: #555;
+  --link-color: #333;
+  --link-hover: #000;
+  --heading-color: #333;
+  --blockquote-color: #666;
+  --code-color: #333;
+  --label-color: #333;
+  --small-color: #666;
+  --figcaption-color: #555;
+  --time-color: #666;
+  --border-color: #ddd;
+  --hover-color: #f0f0f0;
+  --input-bg: #fff;
+  --section-bg: #fafafa;
+  --code-bg: #f0f0f0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --accent-color: #333;
+  --error-color: #d32f2f;
+  --mark-bg: #fff3bf;
+  --mark-color: #333;
+  --intro-bg: var(--section-bg);
+  --aside-bg: #f0f0f0;
+  --aside-border: var(--accent-color);
+  --dialog-border: var(--border-color);
+  --dialog-backdrop: rgba(0, 0, 0, 0.3);
+  --required-color: var(--error-color);
+  --checkbox-check-color: var(--bg-color);
+  --radio-dot-color: var(--bg-color);
+  --kbd-bg: #f5f5f5;
+  --kbd-border: #ccc;
+  --kbd-shadow: rgba(0, 0, 0, 0.1);
+  --progress-bg: #f0f0f0;
+  --progress-value: var(--accent-color);
+  --button-hover-bg: var(--hover-color);
+  --button-active-shadow: rgba(0, 0, 0, 0.2);
+  --file-button-hover: var(--hover-color);
+  --range-thumb-bg: var(--accent-color);
+  --range-track-bg: var(--border-color);
+  --dropdown-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Update dark theme variables */
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #f4f4f4;
+  --text-muted: #ccc;
+  --text-light: #ddd;
+  --link-color: #f4f4f4;
+  --link-hover: #fff;
+  --heading-color: #f4f4f4;
+  --blockquote-color: #ccc;
+  --code-color: #f4f4f4;
+  --label-color: #f4f4f4;
+  --small-color: #ccc;
+  --figcaption-color: #ccc;
+  --time-color: #ccc;
+  --border-color: #404040;
+  --hover-color: #333;
+  --input-bg: #262626;
+  --section-bg: #262626;
+  --code-bg: #333;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --accent-color: #f4f4f4;
+  --error-color: #ff5252;
+  --mark-bg: #665c00;
+  --mark-color: #f4f4f4;
+  --intro-bg: #1a1a1a;
+  --aside-bg: var(--section-bg);
+  --aside-border: var(--accent-color);
+  --dialog-border: var(--border-color);
+  --dialog-backdrop: rgba(0, 0, 0, 0.5);
+  --required-color: var(--error-color);
+  --checkbox-check-color: var(--bg-color);
+  --radio-dot-color: var(--bg-color);
+  --kbd-bg: #333;
+  --kbd-border: #444;
+  --kbd-shadow: rgba(0, 0, 0, 0.2);
+  --progress-bg: #333;
+  --progress-value: var(--accent-color);
+  --button-hover-bg: #444;
+  --button-active-shadow: rgba(0, 0, 0, 0.4);
+  --file-button-hover: #444;
+  --range-thumb-bg: var(--accent-color);
+  --range-track-bg: #444;
+  --dropdown-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Fix hardcoded colors */
+/* Remove these hardcoded colors */
+section {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  background-color: var(--section-bg);
+}
+
+header {
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 2px solid var(--border-color);
+  text-align: center;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--border-color);
+  margin: 20px 0;
+}
+
+fieldset {
+  border: 2px solid var(--border-color);
+  padding: 20px;
+  margin: 0;
+  border-radius: 4px;
+  background-color: var(--section-bg);
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 10px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border-radius: 2px;
+}
+
+label {
+  color: var(--text-color);
+}
+
+address {
+  border-left: 2px solid var(--border-color);
+}
+
+input[type="file"] {
+  border: 2px dashed var(--border-color);
+  background-color: var(--input-bg);
+}
+
+input[type="file"]::file-selector-button {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+input[type="color"] {
+  border: 2px solid var(--border-color);
+}
+
+/* Fix time and small elements */
+time, small {
+  color: var(--text-muted);
+}
+
+/* Remove old theme toggle button styles */
+#theme-toggle {
+  display: none;
+}
+
+/* Update links section */
+.links-section a {
+  color: var(--text-color);
+}
+
+.links-section a:hover {
+  color: var(--link-hover);
+}
+
+/* Fix install section */
+.install-section pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  overflow-x: auto;
+}
+
+/* Update theme switcher dropdown styles */
+details.dropdown {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+details.dropdown summary {
+  padding: 8px 12px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--section-bg);
+  color: var(--text-color);
+}
+
+details.dropdown ul {
+  position: absolute;
+  right: 0;
+  min-width: 120px;
+  margin: 4px 0;
+  padding: 0;
+  background: var(--section-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  list-style: none;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+details.dropdown ul a {
+  display: block;
+  padding: 8px 12px;
+  border: none;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+details.dropdown ul a:hover {
+  background: var(--hover-color);
+}
+
+/* Update section styling for better dark mode contrast */
+section {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  background-color: var(--section-bg);
+  border-radius: 4px;
+}
+
+/* Add specific styling for the introduction section */
+#introduction {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  background-color: var(--intro-bg) !important;
+  border-radius: 4px;
+  color: var(--text-color);
+}
+
+[data-theme="dark"] #introduction {
+  background-color: var(--intro-bg) !important;
+}
+
+/* Update the aside within introduction */
+#introduction aside {
+  background-color: var(--section-bg);
+  padding: 15px;
+  margin: 10px 0;
+  border-left: 2px solid var(--accent-color);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Update kbd elements in introduction */
+#introduction kbd {
+  background-color: var(--section-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  box-shadow: 0 1px 0 var(--border-color);
+  color: var(--text-color);
+  display: inline-block;
+  font-size: 0.85em;
+  padding: 2px 4px;
+  margin: 0 2px;
+}
+
+/* Ensure proper contrast for strong elements */
+#introduction strong {
+  color: var(--text-color);
+}
+
+/* Update blockquote styling */
+blockquote {
+  border-left: 3px solid var(--accent-color);
+  color: var(--blockquote-color);
+  background-color: var(--section-bg);
+}
+
+/* Update code block styling */
+pre, code {
+  background-color: var(--code-bg);
+  border-color: var(--border-color);
+  color: var(--code-color);
+}
+
+/* Update table styling */
+table {
+  border-color: var(--border-color);
+}
+
+th, td {
+  border-color: var(--border-color);
+}
+
+tr:nth-child(even) {
+  background-color: var(--section-bg);
+}
+
+/* Update form elements */
+select option {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Update focus states */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--shadow-color);
 }
